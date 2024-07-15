@@ -39,3 +39,4 @@ werkzeug==2.2.2
 wrapt==1.14.1
 zope-event==4.6
 zope-interface==5.5.2
+setuptools>=70.0.0 # not directly required, pinned by Snyk to avoid a vulnerability
