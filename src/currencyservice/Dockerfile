@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM alpine as builder
+FROM alpine:3.20.3 as builder
 
 RUN apk update
 RUN apk add git cmake make g++ grpc-dev re2-dev protobuf-dev c-ares-dev
@@ -34,7 +34,7 @@ RUN cd /currencyservice \
     && cmake .. \
     && make -j$(nproc || sysctl -n hw.ncpu || echo 1) install
 
-FROM alpine
+FROM alpine:3.20.3
 
 WORKDIR /usr/src/app/
 
